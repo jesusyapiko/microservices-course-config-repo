@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: training-service
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
+microservices:
+  courses:
+    url: http://courses-service
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
+server:
+  port: 8081
