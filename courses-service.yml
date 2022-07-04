@@ -2,7 +2,7 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
-    url: jdbc:mysql://${DATABASE_HOST}:3306/courses
+    url: jdbc:mysql://${DATABASE_HOST}:${DATABASE_PORT}/courses
     password: password
   jpa:
     hibernate:
@@ -17,7 +17,7 @@ spring:
 eureka:
   client:
     service-url:
-      default-zone: http://${EUREKA_HOST}:8761/eureka
+      default-zone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka
   instance:
     instance-id: ${spring.application.name}:${random.value}
 server:
