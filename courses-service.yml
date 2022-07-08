@@ -15,9 +15,11 @@ spring:
     pathmatch:
       matching-strategy: ANT_PATH_MATCHER
 eureka:
+  instance:
+    hostname: ${EUREKA_HOST}
   client:
     serviceUrl:
-      defaultZone: http://${EUREKA_HOST}:${EUREKA_PORT}/eureka
+      defaultZone: http://${eureka.instance.hostname}:${EUREKA_PORT}/eureka
   instance:
     instance-id: ${spring.application.name}:${random.value}
 server:
